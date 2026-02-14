@@ -15,7 +15,7 @@ const images = [
   "/valentines/game-photos/8.avif",
   "/valentines/game-photos/9.avif",
   "/valentines/game-photos/10.avif",
-  "/valentines/game-photos/32.avif",
+  "/valentines/game-photos/11.avif",
   "/valentines/game-photos/12.avif",
   "/valentines/game-photos/13.avif",
   "/valentines/game-photos/14.avif",
