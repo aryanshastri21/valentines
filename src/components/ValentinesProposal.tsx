@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Playfair_Display } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import Fireworks from "@fireworks-js/react";
-import Image from "next/image";
 
 const playfairDisplay = Playfair_Display({
   display: "swap",
@@ -11,42 +10,42 @@ const playfairDisplay = Playfair_Display({
 
 // 36 images
 const images = [
-  "/game-photos/1.avif",
-  "/game-photos/2.avif",
-  "/game-photos/3.avif",
-  "/game-photos/4.avif",
-  "/game-photos/5.avif",
-  "/game-photos/6.avif",
-  "/game-photos/7.avif",
-  "/game-photos/8.avif",
-  "/game-photos/9.avif",
-  "/game-photos/10.avif",
-  "/game-photos/11.avif",
-  "/game-photos/12.avif",
-  "/game-photos/13.avif",
-  "/game-photos/14.avif",
-  "/game-photos/15.avif",
-  "/game-photos/16.avif",
-  "/game-photos/17.avif",
-  "/game-photos/18.avif",
-  "/game-photos/19.avif",
-  "/game-photos/20.avif",
-  "/game-photos/21.avif",
-  "/game-photos/22.avif",
-  "/game-photos/23.avif",
-  "/game-photos/24.avif",
-  "/game-photos/25.avif",
-  "/game-photos/26.avif",
-  "/game-photos/27.avif",
-  "/game-photos/28.avif",
-  "/game-photos/29.avif",
-  "/game-photos/30.avif",
-  "/game-photos/31.avif",
-  "/game-photos/32.avif",
-  "/game-photos/33.avif",
-  "/game-photos/34.avif",
-  "/game-photos/35.avif",
-  "/game-photos/36.avif",
+  "/valentines/game-photos/1.avif",
+  "/valentines/game-photos/2.avif",
+  "/valentines/game-photos/3.avif",
+  "/valentines/game-photos/4.avif",
+  "/valentines/game-photos/5.avif",
+  "/valentines/game-photos/6.avif",
+  "/valentines/game-photos/7.avif",
+  "/valentines/game-photos/8.avif",
+  "/valentines/game-photos/9.avif",
+  "/valentines/game-photos/10.avif",
+  "/valentines/game-photos/11.avif",
+  "/valentines/game-photos/12.avif",
+  "/valentines/game-photos/13.avif",
+  "/valentines/game-photos/14.avif",
+  "/valentines/game-photos/15.avif",
+  "/valentines/game-photos/16.avif",
+  "/valentines/game-photos/17.avif",
+  "/valentines/game-photos/18.avif",
+  "/valentines/game-photos/18.avif",
+  "/valentines/game-photos/17.avif",
+  "/valentines/game-photos/16.avif",
+  "/valentines/game-photos/15.avif",
+  "/valentines/game-photos/14.avif",
+  "/valentines/game-photos/13.avif",
+  "/valentines/game-photos/12.avif",
+  "/valentines/game-photos/11.avif",
+  "/valentines/game-photos/10.avif",
+  "/valentines/game-photos/9.avif",
+  "/valentines/game-photos/8.avif",
+  "/valentines/game-photos/7.avif",
+  "/valentines/game-photos/6.avif",
+  "/valentines/game-photos/5.avif",
+  "/valentines/game-photos/4.avif",
+  "/valentines/game-photos/3.avif",
+  "/valentines/game-photos/2.avif",
+  "/valentines/game-photos/1.avif",
 ];
 
 export default function ValentinesProposal() {
@@ -65,7 +64,6 @@ export default function ValentinesProposal() {
 
   useEffect(() => {
     if (step < 2) {
-      // Change step after 5 seconds
       const timer = setTimeout(() => {
         setStep((prevStep) => prevStep + 1);
       }, 5000);
@@ -94,6 +92,7 @@ export default function ValentinesProposal() {
             Congratulations! You have completed the game.
           </motion.h2>
         )}
+
         {step === 1 && (
           <motion.h2
             key="step-1"
@@ -106,6 +105,7 @@ export default function ValentinesProposal() {
             I have a surprise for you!
           </motion.h2>
         )}
+
         {step === 2 && (
           <motion.div
             key="step-2"
@@ -115,15 +115,14 @@ export default function ValentinesProposal() {
             exit={{ opacity: 0 }}
             className="flex flex-col items-center"
           >
-            {/* Image Grid Background */}
+            {/* Background grid */}
             <div className="absolute inset-0 grid grid-cols-6 opacity-10">
               {images.slice(0, 36).map((src, index) => (
                 <div key={index} className="relative h-full">
-                  <Image
+                  <img
                     src={src}
                     alt={`Memory ${index + 1}`}
-                    fill
-                    className="object-cover"
+                    className="object-cover w-full h-full"
                   />
                 </div>
               ))}
@@ -134,12 +133,14 @@ export default function ValentinesProposal() {
             >
               Will you be my Valentine?
             </h2>
-            <Image
-              src="/sad_hamster.png"
+
+            <img
+              src="/valentines/sad_hamster.png"
               alt="Sad Hamster"
               width={200}
               height={200}
             />
+
             <div className="flex space-x-4 mt-10">
               <button
                 className="px-6 py-2 text-lg font-semibold text-white bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl hover:from-pink-600 hover:to-rose-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -147,6 +148,7 @@ export default function ValentinesProposal() {
               >
                 Yes, I will! 🥰
               </button>
+
               <button
                 className="px-6 py-2 text-lg font-semibold text-white bg-gradient-to-r from-gray-500 to-gray-600 rounded-xl hover:from-gray-600 hover:to-gray-700 transform hover:scale-95 transition-all duration-300 shadow-lg"
                 style={
@@ -166,6 +168,7 @@ export default function ValentinesProposal() {
             </div>
           </motion.div>
         )}
+
         {step === 3 && (
           <motion.div
             key="step-3"
@@ -176,13 +179,16 @@ export default function ValentinesProposal() {
             exit={{ opacity: 0 }}
           >
             Thank you for accepting, I love you! 💕
-            <p className="text-sm mt-4">For more information, write me!!! 💌</p>
-            <Image
-              src="/hamster_jumping.gif"
+
+            <p className="text-sm mt-4">
+              For more information, write me!!! 💌
+            </p>
+
+            <img
+              src="/valentines/hamster_jumping.gif"
               alt="Hamster Feliz"
               width={200}
               height={200}
-              unoptimized
             />
           </motion.div>
         )}
@@ -191,9 +197,7 @@ export default function ValentinesProposal() {
       {showFireworks && (
         <div className="absolute w-full h-full">
           <Fireworks
-            options={{
-              autoresize: true,
-            }}
+            options={{ autoresize: true }}
             style={{
               width: "100%",
               height: "100%",
